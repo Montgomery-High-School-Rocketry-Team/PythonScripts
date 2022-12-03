@@ -3,7 +3,7 @@ import serial
 FILE_NAME = "data.csv"
 FILE_HEADER = "#Time(ms),Accel x(m/s^2),Accel y(m/s^2),Accel z(m/s^2),Gyro x(radians/s),Gyro y(radians/s),Gyro z(radians/s),Temperature(C),Pressure(hPa),Altitude(m)"
 WRITE_DATA = "w"
-READ_DATA = "w"
+READ_DATA = "r"
 DECODE = 'utf-8'
 
 
@@ -28,7 +28,7 @@ def writeData(cc, counter:int):
             f.writelines([FILE_HEADER,cc])
         return
     lines = []
-    with open(FILE_NAME, READ_DATA   ) as f:
+    with open(FILE_NAME, READ_DATA ) as f:
             lines = f.readlines()
         
     lines.append(cc)
