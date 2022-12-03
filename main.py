@@ -1,8 +1,8 @@
 from listports import *
 from ports import *
 
-#listPort()
+#print(listPort())
 # TODO find a method to determine the correct port
 
 #WAIT 10 SECONDS FOR DATA TO COME OVER
-dataPort(serialPorts()[1], 9600)
+dataPort(listPort()[0], 9600)

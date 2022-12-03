@@ -34,10 +34,18 @@ def serialPorts():
 
 def listPort():
     comport = list(comports())
+    listComs = []
     for port in comport:
-        for portinfo in port:
-            print(portinfo)  
-    ports = serialPorts()
-    for port in ports:
-        print(port)
+        if port[1].startswith("USB Serial Device") and port[2].startswith("USB"):
+            listComs.append(port[0])
+    return listComs
+            
+        #for portinfo in port:
+        #    
+        #    print(portinfo)  
+            
+    
+    # ports = serialPorts()
+    # for port in ports:
+    #     print(port)
 
