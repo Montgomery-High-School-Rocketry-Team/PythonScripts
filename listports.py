@@ -2,7 +2,7 @@ import serial
 import sys
 import glob
 import serial
-
+from serial.tools.list_ports import comports
 
 def serialPorts():
     """ Lists serial port names
@@ -33,6 +33,10 @@ def serialPorts():
     return result
 
 def listPort():
+    comport = list(comports())
+    for port in comport:
+        for portinfo in port:
+            print(portinfo)  
     ports = serialPorts()
     for port in ports:
         print(port)
