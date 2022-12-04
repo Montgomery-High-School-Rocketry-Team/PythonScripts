@@ -37,7 +37,7 @@ def listPort():
     listComs = []
     for port in comport:
         for ports in port:
-            print(ports)
+            print(f"Python LOG -- PORT INFO: {ports}")
         if port[1].startswith("USB Serial") and port[2].startswith("USB"):
             listComs.append(port[0])
     return listComs
