@@ -8,20 +8,10 @@ DECODE = 'utf-8'
 
 def dataPort(name: str, baudrate: int):
     ser = serial.Serial(name, baudrate)
-    ser.timeout = 2.0
-    lines = [] 
-    print("python: getting data -- please wait at least 3 seconds.")
-
-    time.sleep(3)
-
-    while ser.inWaiting() > 0:
-        
-        print("python: reading data...")
-        line = ser.readline()
-        cc = str(line,  DECODE)
-        cc.strip("\n")
-        lines.append(cc)
-
+    ser.timeout = 10
+    
+    print(f"python: getting data - will take a few seconds")
+    lines = str(ser.readall(), "utf-8").split("\n")
     print("\npython: finished reading data - writing data\n")
 
     for i in progressbar(range(len(lines)), "Writing data: ",  40):
