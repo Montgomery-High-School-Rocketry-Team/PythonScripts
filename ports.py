@@ -22,8 +22,8 @@ def dataPort(name: str, baudrate: int):
 
 
 
-    for i in progressbar(range(len(lines)), "Writing data: ",  40):
-        time.sleep(0.0001)
+    for i in progressbar(100, "Writing data: ",  40):
+        pass
 
     print("python: wrapping up...")
     writeData(lines)
