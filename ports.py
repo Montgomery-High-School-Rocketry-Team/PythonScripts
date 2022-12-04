@@ -22,7 +22,7 @@ def dataPort(name: str, baudrate: int):
 
 
 
-    for i in progressbar(100, "Writing data: ",  40):
+    for i in progressbar(range(100), "Writing data: ",  40):
         pass
 
     print("python: wrapping up...")
