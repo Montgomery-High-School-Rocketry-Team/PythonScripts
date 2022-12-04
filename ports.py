@@ -14,8 +14,14 @@ def dataPort(name: str, baudrate: int):
     lines = str(ser.readall(), "utf-8").split("\n")
     print("\npython: finished reading data - writing data\n")
 
+
+
     for i in progressbar(range(len(lines)), "Writing data: ",  40):
-        writeData(lines[i], i)
+        time.sleep(0.1)
+
+    print("python: wrapping up...")
+    writeData(lines)
+    print("python: done!")
 
     print("python: finished writing data - exitting...\n")
    # for i in progressbar(range(total), "Writing Data: "):

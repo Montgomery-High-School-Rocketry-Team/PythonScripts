@@ -18,23 +18,11 @@ def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.3+
         show(i+1)
     print("\n", flush=True, file=out)
 
-def writeData(cc, counter:int):
-    if(counter == 0):
-        with open(FILE_NAME, WRITE_DATA) as f:
-            f.writelines([cc])
-        return
-    lines = []
-    with open(FILE_NAME, READ_DATA ) as f:
-            lines = f.readlines()
-        
-    lines.append(cc)
+def writeData(lines):
     with open(FILE_NAME, WRITE_DATA) as f:
         f.writelines(lines)
-
-    #TODO i just remembered i need to make sure that  the team member has termainl set as the running thing (brian and I)
-    
-    
-
-
-
     return
+
+
+    
+
