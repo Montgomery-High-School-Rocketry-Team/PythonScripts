@@ -12,7 +12,7 @@ def dataPort(name: str, baudrate: int):
     
     while True:
         line = str(ser.readline(), "utf-8")
-        print("python LOG: " + line)
+        #print("python LOG: " + line)
         if(line.startswith("#")):
             break
     
