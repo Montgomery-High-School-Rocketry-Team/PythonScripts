@@ -12,12 +12,15 @@ def dataPort(name: str, baudrate: int):
     hashtag_count = 0
     lines = []
     
+    
+    
     while True:
         if(hashtag_count == 0):
             line = str(ser.readline(), "utf-8")
             #print("python LOG: " + line)
             if(line.startswith("##")):
                 hashtag_count += 1
+                print(f"python: getting data - will take a few seconds")
                 
         elif (hashtag_count == 1):
             lines.append( str(ser.readline(), "utf-8"))
@@ -32,8 +35,8 @@ def dataPort(name: str, baudrate: int):
             
         
     
-    print(f"python: getting data - will take a few seconds")
-    lines = str(ser.readall(), "utf-8").split("\n")
+    
+    # lines = str(ser.readall(), "utf-8").split("\n")
     print("\npython: finished reading data - writing data\n")
 
 
