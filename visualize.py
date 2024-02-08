@@ -18,6 +18,12 @@ fig.add_trace(
     row=1,
     col=2,
 )
+fig.add_trace(
+    go.Scatter(x=df["#time"], y=df["press"], mode="lines", name="time vs pressure"),
+    row=1,
+    col=3,
+)
+
 
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["ax"], mode="lines", name="time vs ax"),
@@ -30,7 +36,7 @@ fig.add_trace(
     col=2,
 )
 fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["ay"], mode="lines", name="time vs ay"),
+    go.Scatter(x=df["#time"], y=df["ay"], mode="lines", name="time vs az"),
     row=2,
     col=3,
 )
