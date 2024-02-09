@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 df = pd.read_csv("data.csv")
 
 
-fig = make_subplots(rows=2, cols=3)
+fig = make_subplots(rows=3, cols=3)
 
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["vel"], mode="lines", name="time vs velocity"),
@@ -39,6 +39,11 @@ fig.add_trace(
     go.Scatter(x=df["#time"], y=df["ay"], mode="lines", name="time vs az"),
     row=2,
     col=3,
+)
+fig.add_trace(
+    go.Scatter(x=df["#time"], y=df["a"], mode="lines", name="time vs a"),
+    row=3,
+    col=1,
 )
 
 
