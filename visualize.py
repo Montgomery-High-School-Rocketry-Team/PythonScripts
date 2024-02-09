@@ -1,10 +1,11 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
 df = pd.read_csv("data.csv")
-
+df = df.astype(float)
 
 fig = make_subplots(rows=3, cols=3)
 
@@ -49,3 +50,7 @@ fig.add_trace(
 
 fig.update_layout(title_text="Subplots")
 fig.show()
+
+
+# df["ay"].plot()
+# plt.show()
