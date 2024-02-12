@@ -41,11 +41,11 @@ fig.add_trace(
     row=2,
     col=3,
 )
-fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["a"], mode="lines", name="time vs a"),
-    row=3,
-    col=1,
-)
+# fig.add_trace(
+#     go.Scatter(x=df["#time"], y=df["a"], mode="lines", name="time vs a"),
+#     row=3,
+#     col=1,
+# )
 
 
 fig.update_layout(title_text="Subplots")
