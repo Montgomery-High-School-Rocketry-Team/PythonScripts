@@ -10,17 +10,21 @@ df = df.astype(float)
 fig = make_subplots(rows=3, cols=3)
 
 fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["vel"], mode="lines", name="time vs velocity"),
+    go.Scatter(
+        x=df["#time"], y=df["vel"], mode="lines", name="time vs velocity (integration)"
+    ),
     row=1,
     col=1,
 )
 fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["alt"], mode="lines", name="time vs alt"),
+    go.Scatter(
+        x=df["#time"], y=df["dumb2"], mode="lines", name="time vs vel(from alt)"
+    ),
     row=1,
     col=2,
 )
 fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["press"], mode="lines", name="time vs pressure"),
+    go.Scatter(x=df["#time"], y=df["alt"], mode="lines", name="time vs alt"),
     row=1,
     col=3,
 )
@@ -41,11 +45,11 @@ fig.add_trace(
     row=2,
     col=3,
 )
-# fig.add_trace(
-#     go.Scatter(x=df["#time"], y=df["a"], mode="lines", name="time vs a"),
-#     row=3,
-#     col=1,
-# )
+fig.add_trace(
+    go.Scatter(x=df["#time"], y=df["dumb2"], mode="lines", name="time vs a"),
+    row=3,
+    col=1,
+)
 
 
 fig.update_layout(title_text="Subplots")
