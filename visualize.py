@@ -18,7 +18,7 @@ fig.add_trace(
 )
 fig.add_trace(
     go.Scatter(
-        x=df["#time"], y=df["dumb2"], mode="lines", name="time vs vel(from alt)"
+        x=df["#time"], y=df["dumb3"], mode="lines", name="time vs vel(from alt)"
     ),
     row=1,
     col=2,
@@ -41,8 +41,13 @@ fig.add_trace(
     col=2,
 )
 fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["ay"], mode="lines", name="time vs az"),
+    go.Scatter(x=df["#time"], y=df["az"], mode="lines", name="time vs az"),
     row=2,
+    col=3,
+)
+fig.add_trace(
+    go.Scatter(x=df["#time"], y=df["dumb1"], mode="lines", name="time vs az, inertial"),
+    row=3,
     col=3,
 )
 fig.add_trace(
