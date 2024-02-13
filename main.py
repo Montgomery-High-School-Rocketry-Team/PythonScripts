@@ -1,5 +1,5 @@
 from listports import *
-from ports import *
+from ports import dataPort
 
 #print(listPort())
 # TODO find a method to determine the correct port
