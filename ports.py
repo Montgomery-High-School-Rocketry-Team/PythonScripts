@@ -26,7 +26,8 @@ def dataPort(name: str, baudrate: int):
                 line = line.strip("\n")
                 line = line.strip("\r")
                 line = line + "\n"
-                lines.append(line)
+                if line.count(",") == 10:
+                    lines.append(line)
         elif hashtag_count == 2:
             break
         else:
