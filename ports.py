@@ -2,12 +2,12 @@ import serial
 from utils import *
 import time
 
-DECODE = "utf-8"
-KEEPALL = False
-count = 25
-
 
 def dataPort(name: str, baudrate: int):
+    DECODE = "utf-8"
+    KEEPALL = False
+    count = 25
+
     ser = serial.Serial(name, baudrate)
     ser.timeout = 10
     hashtag_count = 0
