@@ -1,5 +1,6 @@
 @echo off
 title data
+.venv\scripts\activate
 echo make sure you have pyserial installed! (pip install pyserial)
 echo data coming in soon -> press enter to start data transfer (will be around 20 seconds)
 python main.py
