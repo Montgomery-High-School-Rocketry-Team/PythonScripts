@@ -3,6 +3,7 @@ from utils import *
 import time
 
 DECODE = "utf-8"
+KEEPALL = False
 count = 25
 
 
@@ -20,9 +21,10 @@ def dataPort(name: str, baudrate: int):
                 hashtag_count += 1
                 print(f"python: getting data - will take a few seconds")
         elif hashtag_count == 1:
-            count += 1
-            if count < 25:
-                continue
+            if not KEEPALL:
+                count += 1
+                if count < 25:
+                    continue
 
             line = str(ser.readline(), "utf-8")
             if line.startswith("##"):
@@ -31,8 +33,9 @@ def dataPort(name: str, baudrate: int):
                 line = line.strip("\n")
                 line = line.strip("\r")
                 line = line + "\n"
-                if line.count(",") == 10:
-                    lines.append(line)
+                if not KEEPALL:
+                    if line.count(",") == 10:
+                        lines.append(line)
         elif hashtag_count == 2:
             break
         else:
