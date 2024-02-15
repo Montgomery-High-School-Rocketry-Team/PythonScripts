@@ -7,3 +7,4 @@ echo "~~~~~This may take up to ~20 seconds to offload~~~~~"
 python "$(pwd)/main.py"
 echo "----DONE----"
 echo "look for data.csv in your directory :D"
+python visualize.py
