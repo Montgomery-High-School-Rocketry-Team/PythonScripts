@@ -21,6 +21,11 @@ def dataPort(name: str, baudrate: int):
                 hashtag_count += 1
                 print(f"python: getting data - will take a few seconds")
         elif hashtag_count == 1:
+            if not KEEPALL:
+                count += 1
+                if count < 25:
+                    continue
+
             line = str(ser.readline(), "utf-8")
             if line.startswith("##"):
                 hashtag_count += 1
@@ -31,9 +36,6 @@ def dataPort(name: str, baudrate: int):
                 if not KEEPALL:
                     if line.count(",") == 10:
                         lines.append(line)
-
-                else:
-                    lines.append(line)
         elif hashtag_count == 2:
             break
         else:
