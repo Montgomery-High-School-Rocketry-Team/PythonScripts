@@ -26,17 +26,17 @@ fig.add_trace(
 
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["ax"], mode="lines", name="time vs ax"),
-    row=2,
+    row=3,
     col=1,
 )
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["ay"], mode="lines", name="time vs ay"),
-    row=2,
+    row=3,
     col=2,
 )
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["az"], mode="lines", name="time vs az"),
-    row=2,
+    row=3,
     col=3,
 )
 
@@ -45,12 +45,12 @@ fig.add_trace(
     go.Scatter(
         x=df["#time"], y=df["dumb1"], mode="lines", name="time vs dummy1 (accelAyi)"
     ),
-    row=3,
+    row=2,
     col=3,
 )
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["dumb2"], mode="lines", name="time vs dummy2"),
-    row=3,
+    row=2,
     col=1,
 )
 fig.add_trace(
