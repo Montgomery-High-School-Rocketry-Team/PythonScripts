@@ -13,14 +13,20 @@ fig.add_trace(
     go.Scatter(
         x=df["#time"], y=df["vel"], mode="lines", name="time vs velocity (integration)"
     ),
-    row=1,
+    row=2,
     col=1,
+)
+
+fig.add_trace(
+    go.Scatter(x=df["#time"], y=df["press"], mode="lines", name="time vs press"),
+    row=1,
+    col=3,
 )
 
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["alt"], mode="lines", name="time vs alt"),
     row=1,
-    col=3,
+    col=2,
 )
 
 
@@ -49,7 +55,7 @@ fig.add_trace(
 fig.add_trace(
     go.Scatter(x=df["#time"], y=df["dumb2"], mode="lines", name="time vs dummy2"),
     row=2,
-    col=1,
+    col=2,
 )
 fig.add_trace(
     go.Scatter(
@@ -59,7 +65,7 @@ fig.add_trace(
         name="time vs dummy3 (altitude velocity)",
     ),
     row=1,
-    col=2,
+    col=1,
 )
 
 
