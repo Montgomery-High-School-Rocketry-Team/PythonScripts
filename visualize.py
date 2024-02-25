@@ -49,7 +49,9 @@ fig.add_trace(
     col=3,
 )
 fig.add_trace(
-    go.Scatter(x=df["#time"], y=df["dumb2"], mode="lines", name="time vs dummy2"),
+    go.Scatter(
+        x=df["#time"], y=df["dumb2"], mode="lines", name="time vs dummy2 (net velocity)"
+    ),
     row=3,
     col=1,
 )
